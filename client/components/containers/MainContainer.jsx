@@ -3,6 +3,7 @@ import NavBar from "../NavBar.jsx";
 import GuessBoard from "./GuessBoard.jsx";
 import AnswerBoard from "./AnswerBoard.jsx";
 import ResetBoard from "./ResetBoard.jsx";
+import Keyboard from "../Keyboard.jsx";
 
 export default function MainContainer() {
   console.log("I am here");
@@ -16,6 +17,7 @@ export default function MainContainer() {
         </div>
         <AnswerBoard />
       </div>
+      <Keyboard />
     </div>
   );
 }

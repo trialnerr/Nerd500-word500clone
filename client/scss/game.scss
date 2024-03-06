@@ -81,3 +81,15 @@ body {
 .button-text {
   font-size: 12px;
 }
+
+#keyboard-container {
+  display: grid;
+  grid-template-columns: repeat(11, 80px);
+  gap: 2px;
+  justify-content: center;
+  // grid-template-rows: ;
+}
+
+.keyboard-button {
+  padding: 15px;
+}
