@@ -19,6 +19,11 @@ export const changeColorActionCreator = (color) => ({
   payload: {color}
 });
 
+export const resetRowActionCreator = (resetRowId) => ({
+  type: types.RESET_ROW, 
+  payload: {resetRowId}
+
+});
 // export const checkCurrentWordValidity = (bool) => ({
 //  type: types.CHECK_VALIDITY, 
 //  payload: {bool}

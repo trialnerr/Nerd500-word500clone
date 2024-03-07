@@ -12,9 +12,7 @@ export default function Square({ value }) {
   const currentColor = useSelector((state) => state.game.currentColor);
   
   function handleClick(event) {
-    console.log("I am in colors- currentColor", colorObj[currentColor]);
-    console.log({ currentColor });
-    console.log("I am event", event.target);
+    
     event.target.style.backgroundColor = colorObj[currentColor];
   }
   return (

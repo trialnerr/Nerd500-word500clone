@@ -3,6 +3,7 @@ import Square from "./Square.jsx";
 import { useSelector } from "react-redux";
 
 export default function Row({ length, rowId }) {
+  
   console.log({ rowId });
   const currentWord = useSelector((state) => state.game.currentWord);
   const currentRow = useSelector((state) => state.game.currentRow);

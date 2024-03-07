@@ -11,6 +11,7 @@ const initialState = {
   currentWordChoice: "which",
   RGB: "",
   currentColor: "",
+  resetRow: null
 };
 
 export const gameReducers = (state = initialState, action) => {
@@ -53,10 +54,16 @@ export const gameReducers = (state = initialState, action) => {
     }
     case types.CHANGE_COLOR: {
       const currentColor = action.payload.color;
-      console.log("gameReducer i updated color to", {currentColor});
       return {
         ...state,
         currentColor,
+      };
+    }
+    case types.RESET_ROW:{
+      const resetRow = action.payload.resetRowId;
+      return {
+        ...state,
+        resetRow,
       };
     }
     default: {
