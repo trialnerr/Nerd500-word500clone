@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: lightsteelblue;
+  background-color: rgb(206, 221, 241);
 }
 
 .navBar {
@@ -22,7 +22,7 @@ body {
   height: 50px;
   width: 50px;
   margin: 5px;
-  border: solid black 2px;
+  border: solid black 1px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -62,7 +62,7 @@ body {
   height: 50px;
   width: 80px;
   margin: 5px;
-  border: solid black 2px;
+  border: solid black 1px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -96,17 +96,42 @@ body {
 }
 
 .red {
-  background-color: rgb(241, 127, 127);
+  background-color: #f17f7f;
 }
 
 .yellow {
-  background-color: rgb(255, 217, 0);
+  background-color: #ffd900;
 }
 
 .green {
-  background-color: rgb(156, 236, 156);
+  background-color: #9cec9c;
+}
+
+.white {
+  background-color: #d4cfcf;
 }
 
 .answer-container {
   display: flex;
+}
+
+.colorBtn {
+  height: 50px;
+  width: 70px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.colorsContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.colorsWrapper {
+  display: flex;
+}
+
+h3 {
+  text-align: center;
 }

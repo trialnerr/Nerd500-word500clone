@@ -7,9 +7,10 @@ const initialState = {
   currentWord: "",
   currentLetter: "",
   currentRow: 0,
-  previousWords: "", 
-  currentWordChoice: "which", 
-  RGB: ""
+  previousWords: "",
+  currentWordChoice: "which",
+  RGB: "",
+  currentColor: "",
 };
 
 export const gameReducers = (state = initialState, action) => {
@@ -35,9 +36,9 @@ export const gameReducers = (state = initialState, action) => {
         return {
           ...state,
           currentWord,
-          currentRow, 
-          previousWords, 
-          RGB
+          currentRow,
+          previousWords,
+          RGB,
         };
       } else {
         return state;
@@ -48,6 +49,14 @@ export const gameReducers = (state = initialState, action) => {
       return {
         ...state,
         currentWord,
+      };
+    }
+    case types.CHANGE_COLOR: {
+      const currentColor = action.payload.color;
+      console.log("gameReducer i updated color to", {currentColor});
+      return {
+        ...state,
+        currentColor,
       };
     }
     default: {

@@ -14,6 +14,11 @@ export const deleteWordActionCreator = () => ({
   type: types.DELETE_LETTER
 });
 
+export const changeColorActionCreator = (color) => ({
+  type : types.CHANGE_COLOR, 
+  payload: {color}
+});
+
 // export const checkCurrentWordValidity = (bool) => ({
 //  type: types.CHECK_VALIDITY, 
 //  payload: {bool}

@@ -49,3 +49,29 @@ export function compareWithCurrentWord(guess, word) {
   redCount = 5 - (greenCount + yellowCount);
   return [greenCount, yellowCount, redCount].join("");
 }
+
+
+export function updateDailyWord() {
+  const today = new Date().toISOString().slice(0, 10);
+
+  let storedDate = localStorage.getItem("wordDate");
+  if (storedDate === today) {
+    return;
+  }
+  const newWord = pickCurrentWord();
+
+  // Store the new word and today's date
+  localStorage.setItem("dailyWord", newWord);
+  localStorage.setItem("wordDate", today);
+}
+
+export function getCurrentWord() {
+  let storedDate = localStorage.getItem("wordDate");
+  const today = new Date().toISOString().slice(0, 10);
+  if (storedDate !== today) {
+    updateDailyWord();
+  }
+
+  return localStorage.getItem("dailyWord");
+}
+

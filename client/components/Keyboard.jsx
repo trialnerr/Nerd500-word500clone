@@ -13,7 +13,7 @@ function KeyBoardButton({ alphabet }) {
   //const currentState = useSelector((state) => state);
   const guess = useSelector((state) => state.game.currentWord);
   const wordChoice = useSelector((state) => state.game.currentWordChoice);
-
+  
   // console.log("I am the current state", currentState);
   console.log("I am alphabet", alphabet);
 
