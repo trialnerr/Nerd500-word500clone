@@ -4,7 +4,7 @@ import Row from "../Row.jsx";
 export default function GuessBoard() {
   const guessRows = [];
   for (let i = 0; i < 8; i++) {
-    guessRows.push(<Row length={5}/>);
+    guessRows.push(<Row rowId = {i} length={5}/>);
   }
 
   return <div className="gameRows">{guessRows}</div>;

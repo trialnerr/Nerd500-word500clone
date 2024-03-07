@@ -1,33 +1,41 @@
 import React from "react";
 // import Row from "../Row.jsx";
+import { useSelector } from "react-redux";
 
-function Red() {
-  return <div className="square red"></div>;
+
+function Green({id}) {
+  console.log("i am g id", { id });
+  const RGB = useSelector((state) => state.game.RGB);
+  return <div className="square green">{RGB[id] || ""}</div>;
 }
 
-function Yellow() {
-  return <div className="square yellow"></div>;
+function Yellow({id}){
+  console.log('i am yellow id', {id})
+  const RGB = useSelector((state) => state.game.RGB);
+  return <div className="square yellow">{RGB[id] || ""}</div>;
 }
 
-function Green() {
-  return <div className="square green"></div>;
+function Red({id}) {
+  const RGB = useSelector((state) => state.game.RGB);
+  console.log("i am r id", { id });
+  return <div className="square red">{RGB[id] || ""}</div>;
 }
 
-function AnswerRow() {
+function AnswerRow({ansRowId}) {
   return (
     <div className="answer-container">
-      <Red />
-      <Yellow />
-      <Green />
+      <Green id={ansRowId*3 + 0} />
+      <Yellow id={ansRowId*3 + 1} />
+      <Red id={ansRowId*3 + 2} />
     </div>
   );
 }
 
 export default function AnswerBoard() {
-  console.log('I am in answerboard')
+  console.log("I am an answerRow", <AnswerRow />);
   const answerRows = [];
   for (let i = 0; i < 8; i++) {
-    answerRows.push(<AnswerRow />);
+    answerRows.push(<AnswerRow ansRowId={i} />);
   }
 
   return <div className="answerRows">{answerRows}</div>;

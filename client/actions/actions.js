@@ -5,16 +5,16 @@ export const addLetterActionCreator = (letter) => ({
     payload: { letter }
 });
 
-export const updateWordActionCreator = (bool) => ({
+export const updateWordActionCreator = (bool, RGB) => ({
   type: types.UPDATE_WORD,
-  payload: { bool },
+  payload: { bool, RGB },
 });
 
 export const deleteWordActionCreator = () => ({
   type: types.DELETE_LETTER
 });
 
-export const checkCurrentWordValidity = (bool) => ({
- type: types.CHECK_VALIDITY, 
- payload: {bool}
-});
+// export const checkCurrentWordValidity = (bool) => ({
+//  type: types.CHECK_VALIDITY, 
+//  payload: {bool}
+// });

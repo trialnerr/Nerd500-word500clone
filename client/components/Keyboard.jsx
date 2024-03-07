@@ -10,17 +10,19 @@ const row3 = ["DEL", "Z", "X", "C", "V", "B", "N", "M", "ENTER"];
 
 function KeyBoardButton({ alphabet }) {
   const dispatch = useDispatch();
-  const currentState = useSelector((state) => state);
-  console.log("I am the current state", currentState);
-  console.log("I am the current letter", currentState.game.currentLetter);
-  console.log("I am the current word", currentState.game.currentWord);
+  //const currentState = useSelector((state) => state);
+  const guess = useSelector((state) => state.game.currentWord);
+  const wordChoice = useSelector((state) => state.game.currentWordChoice);
+
+  // console.log("I am the current state", currentState);
   console.log("I am alphabet", alphabet);
 
   function letterUpdateHandler() {
     if (alphabet === "ENTER") {
-      const bool = gameFunc.checkValid(currentState.game.currentWord);
-      console.log({ bool });
-      return dispatch(actions.updateWordActionCreator(bool));
+      const bool = gameFunc.checkValid(guess);
+      const RGB = gameFunc.compareWithCurrentWord(guess, wordChoice);
+      console.log({ bool , RGB});
+      return dispatch(actions.updateWordActionCreator(bool, RGB));
     }
     if (alphabet === 'DEL'){
       return dispatch(actions.deleteWordActionCreator());
