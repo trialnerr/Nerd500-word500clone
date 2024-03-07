@@ -1,11 +1,34 @@
 import React from "react";
-import Row from "../Row.jsx";
+// import Row from "../Row.jsx";
 
-export default function GuessBoard() {
-  const guessRows = [];
+function Red() {
+  return <div className="square red"></div>;
+}
+
+function Yellow() {
+  return <div className="square yellow"></div>;
+}
+
+function Green() {
+  return <div className="square green"></div>;
+}
+
+function AnswerRow() {
+  return (
+    <div className="answer-container">
+      <Red />
+      <Yellow />
+      <Green />
+    </div>
+  );
+}
+
+export default function AnswerBoard() {
+  console.log('I am in answerboard')
+  const answerRows = [];
   for (let i = 0; i < 8; i++) {
-    guessRows.push(<Row length={3} />);
+    answerRows.push(<AnswerRow />);
   }
 
-  return <div className="gameRows">{guessRows}</div>;
+  return <div className="answerRows">{answerRows}</div>;
 }

@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: lightblue;
+  background-color: lightsteelblue;
 }
 
 .navBar {
@@ -34,10 +34,6 @@ body {
   border-radius: 4px;
 }
 
-// .gameRows{
-//     display: grid;
-//     grid-template-columns: repeat(5, 50px);
-// }
 .row-container {
   display: grid;
   grid-template-columns: repeat(5, 50px);
@@ -83,13 +79,34 @@ body {
 }
 
 #keyboard-container {
-  display: grid;
-  grid-template-columns: repeat(11, 80px);
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
   gap: 2px;
   justify-content: center;
-  // grid-template-rows: ;
 }
 
 .keyboard-button {
   padding: 15px;
+}
+
+#keyboard-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.red {
+  background-color: rgb(241, 127, 127);
+}
+
+.yellow {
+  background-color: rgb(255, 217, 0);
+}
+
+.green {
+  background-color: rgb(156, 236, 156);
+}
+
+.answer-container {
+  display: flex;
 }
