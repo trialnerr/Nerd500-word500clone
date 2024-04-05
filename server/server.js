@@ -2,17 +2,6 @@ const express = require("express");
 const app = express();
 const path = require("path");
 
-// const leaderList = [
-//   { name: "Anna", id: "a0" },
-//   { name: "Ben", id: "b0" },
-//   { name: "Clara", id: "c0" },
-//   { name: "David", id: "d0" },
-// ];
-
-// app.get("/api/leaders", (req, res) => {
-//   return res.status(200).send(leaderList);
-// });
-
 if (process.env.NODE_ENV === "production") {
   app.use("/build", express.static(path.join(__dirname, "../build")));
   // serve index.html on the route '/'
