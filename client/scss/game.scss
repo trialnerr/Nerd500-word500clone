@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: rgb(206, 221, 241);
+  background-color: rgb(150, 177, 214);
 }
 
 .navBar {
@@ -44,7 +44,7 @@ body {
   display: flex;
   gap: 20px;
   justify-content: center;
-  margin: 30px;
+  margin: 20px;
 }
 
 .mainContainer {
@@ -88,6 +88,7 @@ body {
 
 .keyboard-button {
   padding: 15px;
+  border-radius: 5px;
 }
 
 #keyboard-wrapper {
@@ -135,4 +136,13 @@ body {
 h3 {
   text-align: center;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+hr {
+  border: none;
+  border-top: 2px solid #000;
+}
+
+#resetBackground {
+  background-color: #d4cfcf;
 }
