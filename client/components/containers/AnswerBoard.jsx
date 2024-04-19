@@ -1,24 +1,24 @@
-import React from "react";
+import React from 'react';
 // import Row from "../Row.jsx";
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux';
 
 
 function Green({id}) {
-  console.log("i am g id", { id });
+  
   const RGB = useSelector((state) => state.game.RGB);
-  return <div className="square green">{RGB[id] || ""}</div>;
+  return <div className="square green">{RGB[id] || ''}</div>;
 }
 
 function Yellow({id}){
-  console.log('i am yellow id', {id})
+  
   const RGB = useSelector((state) => state.game.RGB);
-  return <div className="square yellow">{RGB[id] || ""}</div>;
+  return <div className="square yellow">{RGB[id] || ''}</div>;
 }
 
 function Red({id}) {
   const RGB = useSelector((state) => state.game.RGB);
-  console.log("i am r id", { id });
-  return <div className="square red">{RGB[id] || ""}</div>;
+ 
+  return <div className="square red">{RGB[id] || ''}</div>;
 }
 
 function AnswerRow({ansRowId}) {
@@ -32,7 +32,7 @@ function AnswerRow({ansRowId}) {
 }
 
 export default function AnswerBoard() {
-  console.log("I am an answerRow", <AnswerRow />);
+  console.log('I am an answerRow', <AnswerRow />);
   const answerRows = [];
   for (let i = 0; i < 8; i++) {
     answerRows.push(<AnswerRow ansRowId={i} />);
