@@ -1,4 +1,4 @@
-import * as types from "../constants/actionTypes";
+import * as types from '../constants/actionTypes';
 
 export const addLetterActionCreator = (letter) => ({
     type: types.UPDATE_LETTER,
@@ -24,6 +24,7 @@ export const resetRowActionCreator = (resetRowId) => ({
   payload: {resetRowId}
 
 });
+
 // export const checkCurrentWordValidity = (bool) => ({
 //  type: types.CHECK_VALIDITY, 
 //  payload: {bool}
