@@ -7,20 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "NODE_ENV=production node server/server.js",
     "build": "NODE_ENV=production webpack",
-    "dev": "nodemon server/server.js & NODE_ENV=development webpack serve --open --hot",
-    "gulp-prod": "node_modules/.bin/gulp prod",
-    "gulp-dev": "node_modules/.bin/gulp dev"
+    "dev": "nodemon server/server.js & NODE_ENV=development webpack serve --open --hot"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.1",
-    "keybored": "^0.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-redux": "^9.1.0",
-    "simple-keyboard": "^3.7.65"
+    "react-redux": "^9.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
