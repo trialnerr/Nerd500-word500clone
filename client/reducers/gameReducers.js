@@ -1,16 +1,17 @@
-import * as types from "../constants/actionTypes";
-import * as gamesFunc from "../reducers/game";
+import * as types from '../constants/actionTypes';
 
-let currentChoice = gamesFunc.pickCurrentWord();
+ import { wordChoice } from '../reducers/game';
+ console.log({wordChoice});
+
 
 const initialState = {
-  currentWord: "",
-  currentLetter: "",
+  currentWord: '',
+  currentLetter: '',
   currentRow: 0,
-  previousWords: "",
-  currentWordChoice: "which",
-  RGB: "",
-  currentColor: "",
+  previousWords: '',
+  currentWordChoice: wordChoice,
+  RGB: '',
+  currentColor: '',
   resetRow: null
 };
 
@@ -30,7 +31,7 @@ export const gameReducers = (state = initialState, action) => {
     }
     case types.UPDATE_WORD: {
       if (action.payload.bool) {
-        const currentWord = "";
+        const currentWord = '';
         const previousWords = state.previousWords + state.currentWord;
         const currentRow = state.currentRow + 1;
         const RGB = state.RGB + action.payload.RGB;

@@ -1,5 +1,5 @@
-import React from "react";
-import Reset from "../Reset.jsx";
+import React from 'react';
+import Reset from '../Reset.jsx';
 
 export default function ResetBoard() {
   
