@@ -1,22 +1,22 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-export default function Square({ value }) {
+export default function Square({  value, reset }) {
   const colorObj = {
-    red: "#f17f7f",
-    green: "#9cec9c",
-    white: "#d4cfcf",
-    yellow: "#ffd900",
+    red: '#f17f7f',
+    green: '#9cec9c',
+    white: '#d4cfcf',
+    yellow: '#ffd900',
   };
-
+  
+  
   const currentColor = useSelector((state) => state.game.currentColor);
   
   function handleClick(event) {
-    
     event.target.style.backgroundColor = colorObj[currentColor];
   }
   return (
-    <button onClick={handleClick} className="square">
+    <button onClick={handleClick} className="square" style = {reset ? {backgroundColor: '#d4cfcf' } : null}>
       {value}
     </button>
   );
