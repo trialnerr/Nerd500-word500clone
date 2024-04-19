@@ -1,9 +1,9 @@
-import React from "react";
-import * as actions from "../actions/actions";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import * as actions from '../actions/actions';
+import { useDispatch } from 'react-redux';
 
 
-export default function Reset({ resetRowId }) {
+export default function ResetBoard({ resetRowId }) {
   const dispatch = useDispatch();
   function handleClick() {
     return dispatch(actions.resetRowActionCreator(resetRowId));
