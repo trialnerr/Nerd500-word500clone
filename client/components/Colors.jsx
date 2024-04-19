@@ -3,12 +3,11 @@ import * as actions from '../actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { current } from '@reduxjs/toolkit';
 
-
 function Colors() {
   const dispatch = useDispatch();
    
   const currentColor = useSelector((state) => state.game.currentColor);
-  console.log({currentColor});
+
   
   function colorChangeHandler(color) {
     dispatch(actions.changeColorActionCreator(color));
