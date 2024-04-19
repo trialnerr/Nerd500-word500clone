@@ -1,32 +1,32 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "commonjs": true,
-        "es2021": true
+    'env': {
+        'browser': true,
+        'commonjs': true,
+        'es2021': true
     },
-    "extends": "plugin:react/recommended",
-    "overrides": [
+    'extends': 'plugin:react/recommended',
+    'overrides': [
         {
-            "env": {
-                "node": true
+            'env': {
+                'node': true
             },
-            "files": [
-                ".eslintrc.{js,cjs}"
+            'files': [
+                '.eslintrc.{js,cjs}'
             ],
-            "parserOptions": { 
-                "sourceType": "script"
+            'parserOptions': { 
+                'sourceType': 'script'
             }
         }
     ],
-    "parserOptions": {
-        "ecmaVersion": "latest", 
-        "sourceType": "module"
+    'parserOptions': {
+        'ecmaVersion': 'latest', 
+        'sourceType': 'module'
     },
-    "plugins": [
-        "react"
+    'plugins': [
+        'react'
     ],
-    "rules": {
-        "semi": ["error", "always"],
-        "quotes": ["error", "double"], 
+    'rules': {
+        'semi': ['error', 'always'],
+        'quotes': ['error', 'single'], 
     }
 };
