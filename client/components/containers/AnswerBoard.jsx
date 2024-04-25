@@ -35,7 +35,7 @@ export default function AnswerBoard() {
   console.log('I am an answerRow', <AnswerRow />);
   const answerRows = [];
   for (let i = 0; i < 8; i++) {
-    answerRows.push(<AnswerRow ansRowId={i} />);
+    answerRows.push(<AnswerRow ansRowId={i} key={`answer_row${i}`}/>);
   }
 
   return <div className="answerRows">{answerRows}</div>;
