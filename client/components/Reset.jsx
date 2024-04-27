@@ -1,12 +1,12 @@
 import React from 'react';
-import * as actions from '../actions/actions';
 import { useDispatch } from 'react-redux';
+import { resetRow } from '../reducers/gameReducers';
 
 
-export default function ResetBoard({ resetRowId }) {
+export default function Reset({ resetRowId }) {
   const dispatch = useDispatch();
   function handleClick() {
-    return dispatch(actions.resetRowActionCreator(resetRowId));
+    return dispatch(resetRow(resetRowId));
   }
   return (
     <button onClick = {handleClick} className="reset">
