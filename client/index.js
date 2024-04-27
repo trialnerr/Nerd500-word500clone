@@ -4,12 +4,12 @@ import App from './App.jsx';
 import { store } from './store.js';
 import { Provider } from 'react-redux';
 
-//import your styles
+//import your styles here
 import styles from './scss/application.scss';
 
 
-const domNode = document.getElementById('root');
-const root = createRoot(domNode);
+const rootNode = document.getElementById('root');
+const root = createRoot(rootNode);
 root.render(
   <Provider store={store}>
     <App />
