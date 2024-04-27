@@ -30,5 +30,6 @@ module.exports = {
         'quotes': ['error', 'single'], 
         'no-unused-vars': 'warn',
         'react/prop-types': 'off',
+        'react/react-in-jsx-scope': 'off',
     }
 };
