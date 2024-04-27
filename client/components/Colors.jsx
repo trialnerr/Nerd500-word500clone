@@ -1,16 +1,14 @@
 import React from 'react';
-import * as actions from '../actions/actions';
 import { useDispatch, useSelector } from 'react-redux';
-import { current } from '@reduxjs/toolkit';
+import { changeColor } from '../reducers/gameReducers';
 
 function Colors() {
   const dispatch = useDispatch();
    
   const currentColor = useSelector((state) => state.game.currentColor);
 
-  
   function colorChangeHandler(color) {
-    dispatch(actions.changeColorActionCreator(color));
+    dispatch(changeColor(color));
   }
 
   function ColorButton({ color }) {
