@@ -1,15 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { wordChoice } from '../reducers/game';
-console.log('in gameReducer', { wordChoice });
-
 //initial state
 const initialState = {
   currentWord: '',
   currentLetter: '',
   currentRow: 0,
   previousWords: '',
-  currentWordChoice: wordChoice,
   greenYellowRedCount: '',
   currentColor: '',
   resetRow: null,
@@ -32,55 +28,30 @@ const gameSlice = createSlice({
     deleteLetter(state) {
       state.currentWord = state.currentWord.slice(0, -1);
     },
-    //if the word is valid, update the currentWord, currentLetter, 
+    //if the word is valid, update the currentWord, currentLetter,
     //previousWords, currentRow, and greenYellowRedCount
     updateWord(state, action) {
       if (action.payload.isValidWord) {
-       state.previousWords += state.currentWord;
-       state.currentWord = '';
-       state.currentLetter = '';
-       state.currentRow += 1;
-       state.greenYellowRedCount += action.payload.greenYellowRedCount;
-      }
-      else {
+        state.previousWords += state.currentWord;
+        state.currentWord = '';
+        state.currentLetter = '';
+        state.currentRow += 1;
+        state.greenYellowRedCount += action.payload.greenYellowRedCount;
+      } else {
         return state;
       }
     },
     resetRow(state, action) {
       state.resetRow = action.payload;
-    }, 
-    changeColor(state, action){
+    },
+    changeColor(state, action) {
       state.currentColor = action.payload;
-    }
-
+    },
   },
 });
 
-console.log({ gameSlice });
-
 export default gameSlice.reducer;
-export const { updateLetter, deleteLetter, updateWord, resetRow, changeColor } = gameSlice.actions;
-console.log({ updateLetter });
+export const { updateLetter, deleteLetter, updateWord, resetRow, changeColor } =
+  gameSlice.actions;
 
 
-
-
-//     case types.CHANGE_COLOR: {
-//       const currentColor = action.payload.color;
-//       return {
-//         ...state,
-//         currentColor,
-//       };
-//     }
-//     case types.RESET_ROW:{
-//       const resetRow = action.payload.resetRowId;
-//       return {
-//         ...state,
-//         resetRow,
-//       };
-//     }
-//     default: {
-//       return state;
-//     }
-//   }
-// };
