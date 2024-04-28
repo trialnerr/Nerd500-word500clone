@@ -1,74 +1,86 @@
-import * as types from '../constants/actionTypes';
+import { createSlice } from '@reduxjs/toolkit';
 
- import { wordChoice } from '../reducers/game';
- console.log({wordChoice});
+import { wordChoice } from '../reducers/game';
+console.log('in gameReducer', { wordChoice });
 
-
+//initial state
 const initialState = {
   currentWord: '',
   currentLetter: '',
   currentRow: 0,
   previousWords: '',
   currentWordChoice: wordChoice,
-  RGB: '',
+  greenYellowRedCount: '',
   currentColor: '',
-  resetRow: null
+  resetRow: null,
 };
 
-export const gameReducers = (state = initialState, action) => {
-  switch (action.type) {
-    case types.UPDATE_LETTER: {
-      let currentWord = state.currentWord;
-      const currentLetter = action.payload.letter;
+//create a gameLogic Slice
+const gameSlice = createSlice({
+  name: 'game',
+  initialState,
+  reducers: {
+    updateLetter(state, action) {
+      //if the currentWord is less than 5, add the currentLetter to the currentWord
+      state.currentLetter = action.payload;
       if (state.currentWord.length < 5) {
-        currentWord = state.currentWord + currentLetter;
-      }
-      return {
-        ...state,
-        currentLetter,
-        currentWord,
-      };
-    }
-    case types.UPDATE_WORD: {
-      if (action.payload.bool) {
-        const currentWord = '';
-        const previousWords = state.previousWords + state.currentWord;
-        const currentRow = state.currentRow + 1;
-        const RGB = state.RGB + action.payload.RGB;
-        return {
-          ...state,
-          currentWord,
-          currentRow,
-          previousWords,
-          RGB,
-        };
+        state.currentWord += state.currentLetter;
       } else {
         return state;
       }
+    },
+    deleteLetter(state) {
+      state.currentWord = state.currentWord.slice(0, -1);
+    },
+    //if the word is valid, update the currentWord, currentLetter, 
+    //previousWords, currentRow, and greenYellowRedCount
+    updateWord(state, action) {
+      if (action.payload.isValidWord) {
+       state.previousWords += state.currentWord;
+       state.currentWord = '';
+       state.currentLetter = '';
+       state.currentRow += 1;
+       state.greenYellowRedCount += action.payload.greenYellowRedCount;
+      }
+      else {
+        return state;
+      }
+    },
+    resetRow(state, action) {
+      state.resetRow = action.payload;
+    }, 
+    changeColor(state, action){
+      state.currentColor = action.payload;
     }
-    case types.DELETE_LETTER: {
-      const currentWord = state.currentWord.slice(0, -1);
-      return {
-        ...state,
-        currentWord,
-      };
-    }
-    case types.CHANGE_COLOR: {
-      const currentColor = action.payload.color;
-      return {
-        ...state,
-        currentColor,
-      };
-    }
-    case types.RESET_ROW:{
-      const resetRow = action.payload.resetRowId;
-      return {
-        ...state,
-        resetRow,
-      };
-    }
-    default: {
-      return state;
-    }
-  }
-};
+
+  },
+});
+
+console.log({ gameSlice });
+
+export default gameSlice.reducer;
+export const { updateLetter, deleteLetter, updateWord, resetRow, changeColor } = gameSlice.actions;
+console.log({ updateLetter });
+
+
+
+
+//     case types.CHANGE_COLOR: {
+//       const currentColor = action.payload.color;
+//       return {
+//         ...state,
+//         currentColor,
+//       };
+//     }
+//     case types.RESET_ROW:{
+//       const resetRow = action.payload.resetRowId;
+//       return {
+//         ...state,
+//         resetRow,
+//       };
+//     }
+//     default: {
+//       return state;
+//     }
+//   }
+// };
