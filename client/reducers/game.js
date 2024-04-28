@@ -19,7 +19,8 @@ function removeIndices(indices, guess) {
     .filter((_, index) => !indices.includes(index))
     .join('');
 }
-
+//this function will compare the guess with the current word
+//it will return a string of the form 'greenCountyellowCountredCount'
 export function compareWithCurrentWord(guess, word) {
   guess = guess.toLowerCase(); 
   let greenCount = 0;
