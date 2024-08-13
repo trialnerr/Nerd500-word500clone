@@ -8,7 +8,7 @@ export default function Square({ value, reset }) {
     red: '#f17f7f',
     green: '#9cec9c',
     white: '#d4cfcf',
-    yellow: '#ffd900',
+    yellow: '#e9ba3a',
   };
 
   const currentColor = useSelector((state) => state.game.currentColor);
@@ -26,13 +26,13 @@ export default function Square({ value, reset }) {
   }
 
   return (
-    <button
+    <div
       onClick={handleClick}
       className='square'
       style={{ backgroundColor }}
     >
       {value}
-    </button>
+    </div>
   );
 }
 
