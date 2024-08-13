@@ -51,8 +51,8 @@ export default function Keyboard() {
   }, [guess, dispatch]);
 
   return (
-    <div id='keyboard-wrapper'>
-      <div id='keyboard-container'>
+    <div id='keyboardWrapper'>
+      <div id='keyboardContainer'>
         {rows.map((_, index) => renderRow(index))}
       </div>
     </div>
