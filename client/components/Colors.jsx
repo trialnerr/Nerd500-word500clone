@@ -25,7 +25,7 @@ function Colors() {
   return (
     <div className="colorsContainer">
       <div>
-        <h3 className = {`${currentColor}`}>ColorPicker</h3>
+        <h2 className = {`${currentColor}`}>ColorPicker</h2>
         <div className="colorsWrapper">
           <ColorButton color="green" />
           <ColorButton color="yellow" />
@@ -33,7 +33,6 @@ function Colors() {
           <ColorButton color="white" />
         </div>
       </div>
-      <div></div>
     </div>
   );
 }
