@@ -1,6 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
 import React from 'react';
-import * as gameFunc from '../utilFunctions.js/game';
 import { handleEnterKey, handleDeleteKey, handleLetterInput } from '../utilFunctions.js/keyboardFunctions.js';
 import {
   updateLetter,
@@ -14,7 +13,7 @@ export default function KeyBoardButton({ alphabet }) {
   const previousWords = useSelector((state) => state.game.previousWords);
 
   //if the letter has been used before, we want to change the background color
-  let backgroundColor = previousWords.includes(alphabet) ? '#d4cfcf' : null;
+  let backgroundColor = previousWords.includes(alphabet) ? '#5f5f60' : null;
 
   //we still need to do logic for _ key
   function letterUpdateHandler() {
@@ -38,7 +37,7 @@ export default function KeyBoardButton({ alphabet }) {
 
   return (
     <button
-      style={{ backgroundColor: backgroundColor || '#ffffff' }}
+      style={{ backgroundColor: backgroundColor || '#d4cfcf' }}
       onClick={letterUpdateHandler}
       className='keyboard-button'
     >
