@@ -33,7 +33,7 @@ body {
   margin-bottom: -2px;
   margin-right: -2px;
   font-size: 30px;
-  // background-color: #d4cfcf;
+  background-color: #d4cfcf;
   color: black;
   border-radius: 4px;
 }
@@ -42,6 +42,7 @@ body {
   display: grid;
   grid-template-columns: repeat(5, 50px);
   gap: 2px;
+  background-color: #d4cfcf;;
 }
 
 .boardContainer {
@@ -87,13 +88,13 @@ body {
   justify-content: center;
 }
 
-#keyboardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  width: 500px;
-  gap: 2px;
-  justify-content: center;
-}
+// #keyboardContainer {
+//   display: flex;
+//   flex-wrap: wrap;
+//   width: 500px;
+//   gap: 2px;
+//   justify-content: center;
+// }
 
 .keyboardButton {
   padding: 15px;
@@ -151,12 +152,6 @@ hr {
 body {
   font-family: 'Roboto', sans-serif;
 }
-
-h3 {
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-}
-
 
 
 @media (max-width: 768px) {
