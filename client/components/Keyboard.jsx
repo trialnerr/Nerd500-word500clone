@@ -22,7 +22,7 @@ export default function Keyboard() {
     rows[index].map((option) =>
       keyboardRow.push(<KeyBoardButton key={option} alphabet={option} />)
     );
-    return <div id={`row${index}`}>{keyboardRow}</div>;
+    return <div id={`row${index}`} key={`row${index}`}>{keyboardRow}</div>;
   };
 
   // Handle key press events
