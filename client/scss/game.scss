@@ -163,26 +163,6 @@ h2{
 
 }
 
-
-
-
-
-
-
-// .button-text {
-//   font-size: 12px;
-// }
-
-
-
-// // #keyboardContainer {
-// //   display: flex;
-// //   flex-wrap: wrap;
-// //   width: 500px;
-// //   gap: 2px;
-// //   justify-content: center;
-// // }
-
 .keyboard-button {
   padding: 20px;
   border-radius: 5px;
@@ -195,6 +175,32 @@ h2{
 .keyboard-button:hover {
   background-color: #f0f0f0;
 }
+
+.how-to-container{
+  width: 60%;
+  margin: 2rem auto;
+  padding: 1em;
+  line-height: 1.5rem;
+  background-color: rgb(2, 1, 1);
+  border-radius: 1rem;
+
+  h1{
+  text-align: center;
+  font-weight: 800;
+  font-size: x-large;
+  } 
+
+  ul {
+    list-style-type: circle;
+    margin: 0.5rem 2rem ;
+    // margin-top: 0.5rem;
+  }
+  p{
+    padding: 0.5rem;
+  }
+
+}
+
 
 
 
