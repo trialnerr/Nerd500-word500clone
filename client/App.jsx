@@ -1,10 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import MainContainer from './components/containers/MainContainer.jsx';
 
-class App extends Component {
-  render() {
-    return <MainContainer />;
-  }
-}
+const App = () => < MainContainer />; 
 
 export default App;
