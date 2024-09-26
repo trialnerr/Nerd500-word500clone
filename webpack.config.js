@@ -7,6 +7,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
+    publicPath: '/',
   },
   mode: process.env.NODE_ENV,
   module: {
@@ -25,11 +26,7 @@ module.exports = {
       },
       {
         test: /\.s[ac]ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
     ],
   },
@@ -49,9 +46,10 @@ module.exports = {
       },
     ],
     static: {
-      publicPath: '/build',
+      // publicPath: '/build',
       directory: path.resolve(__dirname, 'build'),
     },
+    historyApiFallback: true,
     port: 8080,
   },
 };
