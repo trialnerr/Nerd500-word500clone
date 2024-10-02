@@ -2,36 +2,71 @@ import React from 'react';
 import KeyBoardButton from './KeyBoardButton.jsx';
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateLetter, updateWord, deleteLetter } from '../reducers/gameReducers';
-import { handleEnterKey, handleDeleteKey , handleLetterInput} from '../utilFunctions.js/keyboardFunctions.js';
+import {
+  updateLetter,
+  updateWord,
+  deleteLetter,
+} from '../reducers/gameReducers';
+import {
+  handleEnterKey,
+  handleDeleteKey,
+  handleLetterInput,
+} from '../utilFunctions.js/keyboardFunctions.js';
 
-
-const rows = [
-  ['_', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
-  ['HINT', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-  ['DEL', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', 'ENTER'],
+const letters = [
+  '_',
+  'Q',
+  'W',
+  'E',
+  'R',
+  'T',
+  'Y',
+  'U',
+  'I',
+  'O',
+  'P',
+  'HINT',
+  'A',
+  'S',
+  'D',
+  'F',
+  'G',
+  'H',
+  'J',
+  'K',
+  'L',
+  'DEL',
+  'Z',
+  'X',
+  'C',
+  'V',
+  'B',
+  'N',
+  'M',
+  'ENTER',
 ];
 //keyboard component returns the keyboard buttons
 export default function Keyboard() {
   const dispatch = useDispatch();
   const guess = useSelector((state) => state.game.currentWord);
 
-  //render each row of the keyboard
-  const renderRow = (index) => {
+  //render one row of keyboard buttons
+  const renderedLetters = () => {
     const keyboardRow = [];
-    rows[index].map((option) =>
-      keyboardRow.push(<KeyBoardButton key={option} alphabet={option} />)
-    );
-    return <div id={`row${index}`} key={`row${index}`}>{keyboardRow}</div>;
+    console.log({ letters });
+    letters.forEach((letter) => {
+      keyboardRow.push(<KeyBoardButton key={letter} alphabet={letter} />);
+    });
+
+    return <section id='keyboard'>{keyboardRow}</section>;
   };
 
   // Handle key press events
   useEffect(() => {
     const handleKeyPress = (event) => {
-      
       const keyPressed = event.key.toUpperCase();
       console.log(/^[A-Z_]$/.test(keyPressed), keyPressed);
-     
+
       if (keyPressed === 'ENTER') {
         return handleEnterKey(guess, dispatch, updateWord);
       } else if (keyPressed === 'BACKSPACE') {
@@ -52,9 +87,8 @@ export default function Keyboard() {
 
   return (
     <div id='keyboardWrapper'>
-      <div id='keyboardContainer'>
-        {rows.map((_, index) => renderRow(index))}
-      </div>
+      {renderedLetters()}
     </div>
   );
+
 }
