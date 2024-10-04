@@ -1,22 +1,42 @@
 import React from 'react';
 import {
-  Link
+  NavLink
 } from 'react-router-dom';
 
 
 export default function NavBar() {
   return (
-
-      <header>
-        <nav className='navBar'>
-          <h1>Nerd500 - word500 clone</h1>
-          <div className='navLinks'>
-            <Link to='/how-to'>How To Play</Link>
-            <Link to='/contact'>Contact</Link>
+    <header>
+      <nav className='navBar'>
+        <div className='navLinks'>
+          <NavLink
+            to='/'
+            className={({ isActive, isPending }) =>
+              isActive ? 'active' : isPending ? 'pending' : 'before'
+            }
+          >
+            Word500 Clone
+          </NavLink>
+          <div>
+            <NavLink
+              to='/how-to'
+              className={({ isActive, isPending }) =>
+                isActive ? 'active' : isPending ? 'pending' : 'before'
+              }
+            >
+              How To Play
+            </NavLink>
+            <NavLink
+              to='/contact'
+              className={({ isActive, isPending }) =>
+                isActive ? 'active' : isPending ? 'pending' : 'before'
+              }
+            >
+              Contact
+            </NavLink>
           </div>
-        </nav>
-      </header>
-  
-
+        </div>
+      </nav>
+    </header>
   );
 }
