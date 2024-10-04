@@ -34,12 +34,19 @@ header{
 }
 .navLinks{
   display: flex;
-  gap: 2rem;
+  justify-content: space-between;
+  width: 100%; 
+  padding: 0.5rem;
+  color: white;
 }
 
 .navLinks a{
-  color: white;
   text-decoration: none;
+  margin-right: 4rem;
+}
+
+.navLinks a:last-of-type{
+  margin-right: 0;
 }
 
 .colorsContainer {
@@ -217,4 +224,15 @@ h2{
 
 }
 
+.active{
+  color: rgb(192, 242, 192);
+}
+
+.pending{
+  color: orange;
+}
+
+.before{
+  color: white;
+}
 
