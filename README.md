@@ -21,35 +21,8 @@ Check out the live version of Nerd500 here: [Nerd500 - Word500 Clone](https://wo
 - **SASS:** Employed for custom styling, enabling advanced styling features and maintainability.
 - **Webpack:** Build tool used for bundling assets, and for optimized development.
 
-## Getting Started
-
-To run Nerd500 locally, follow these steps:
-
-1. **Clone the repository:**
-   ```bash
-   git clone git@github.com:trialnerr/Nerd500-word500clone.git
-   cd nerd500-clone
-   ```
-
-2. **Install dependencies** 
-   ```bash 
-   npm install 
-   ```
-
-2. **Run the dev server** 
-   ```bash 
-   npm run dev
-   ```
-
-2. **Build for production:** 
-   ```bash 
-   npm run build 
-   ```
-
-2. **Start the production server:** 
-   ```bash 
-   npm start
-   ```
+## Contributing
+- Contributions are welcome. There are issues on the repo that you can work on :)
 
 
 
